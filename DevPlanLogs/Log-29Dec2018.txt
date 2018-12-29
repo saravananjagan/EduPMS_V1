@@ -1,0 +1,9 @@
+LOG - 29DEC2018
+
+Objectives/ Required: 
+1. Create table structure for the authentication based on tenant and also structure for the authorization roles.
+2. Create the application layers and the base code for login form and landing page functionality with forms authentication.
+
+Objectives/ Optional: 
+1. Set authorization based accessibility for the question paper page
+2. Test the same
