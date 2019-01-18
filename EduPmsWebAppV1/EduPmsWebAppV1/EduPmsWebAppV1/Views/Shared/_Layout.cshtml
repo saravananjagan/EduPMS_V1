@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Performance Management System</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/jquery.timeentry.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.plugin.min.js"></script>
+    <script src="~/Scripts/jquery.timeentry.min.js"></script>
+</head>
+<body style="padding:0!important;">
+    <div class="small-div">
+        <center><img src="https://www.designevo.com/res/templates/thumb_small/black-wheat-and-mortarboard.png" class="rounded-circle">    </center>
+    </div>
+    <div id="overlay"></div>
+    @RenderBody()
+    <div id="loader"></div>
+    <script>
+        function showLoader() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("loader").style.display = "block";
+        }
+        function endLoader() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("loader").style.display = "none";
+        }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/*
+Last Updated: 29Dec2018 16:45
+*/
+LOGIN ARCHITECTURE:
+1. Membership table as User table to store the informations of the user login credentials with password hash which could be decoded usign the .Net service layer.
+2. The user table has the following columns
+	[User_ID] [uniqueidentifier] NOT NULL default newid() PRIMARY KEY,
+	[User_TenantID] [uniqueidentifier] NOT NULL,
+	[User_UserName] [varchar](255) NOT NULL,
+	[User_EmailID] [varchar](255) NULL,
+	[User_Comment] [varchar](255) NULL,
+	[User_Password] [nvarchar](255) NOT NULL,
+	[User_PasswordQuestion] [varchar](225) NULL,
+	[User_PasswordAnswer] [varchar](225) NULL,
+	[User_IsApproved] [bit] NULL,
+	[User_LastActivityDate] [datetime] NULL,
+	[User_LastLoginDate] [datetime] NULL,
+	[User_LastPasswordChangedDate] [datetime] NULL,
+	[User_CreationDate] [datetime] NULL,
+	[User_IsLockedOut] [bit] NULL,
+	[User_LastLockedOutDate] [datetime] NULL,
+	[User_FailedPasswordAttemptCount] [int] NULL,
+	[User_FailedPasswordAttemptWindowStart] [datetime] NULL,
+	[User_FailedPasswordAnswerAttemptCount] [int] NULL,
+	[User_FailedPasswordAnswerAttemptWindowStart] [datetime] NULL,
+	[User_Status] [bit] NOT NULL,
+	[User_IsFirstTimeUser] [bit] NOT NULL default 1,
+	[User_IsUserPasswordChangeForced] [bit] NOT NULL default 0,
+	FOREIGN KEY([User_TenantID]) REFERENCES [CelloSaaS].[TenantDetails] ([Tenant_Code])
+
+3. TenantDetails table store the information of the tenant details
+4. Tenantdetails has the following columns 
+	[Tenant_Id] [uniqueidentifier] NOT NULL PRIMARY KEY DEFAULT NEWID(),
+	[Tenant_Name] [nvarchar](200) NOT NULL,
+	[Tenant_Description] [nvarchar](2000) NULL,
+	[Tenant_Address] [nvarchar](4000) NULL,
+	[Tenant_Website] [varchar](100) NULL,
+	[Tenant_Contact] [nvarchar](4000) NULL,
+	[Tenant_BillingType] [varchar](50) NULL,
+	[Tenant_PaymentDetails] [nvarchar](4000) NULL,
+	[Tenant_BillingContact] [nvarchar](4000) NULL,
+	[Tenant_BillingAddress] [nvarchar](4000) NULL,
+	[Tenant_IsProductAdmin] [bit] NULL,
+	[Tenant_URL] [varchar](200) NULL,
+	[Tenant_CreatedBy] [varchar](50) NOT NULL,
+	[Tenant_CreatedOn] [datetime] NOT NULL,
+	[Tenant_UpdatedOn] [datetime] NULL,
+	[Tenant_UpdatedBy] [varchar](50) NULL,
+	[Tenant_Status] [bit] NOT NULL,
+	[Tenant_ApprovalStatus] [varchar](50) NOT NULL,

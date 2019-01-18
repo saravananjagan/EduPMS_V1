@@ -1,0 +1,27 @@
+﻿<div class="container d-flex h-80">
+    <div class="row align-self-center w-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                <div class="alert alert-danger" role="alert" id="InvalidCredential" style="display:none;">  
+                    Please Enter Valid UserName / PassWord  !!! 
+                </div>
+                <center><h3>Educational Performance Management System</h3></center>
+                <hr />
+                <div class="container">
+                    <input type="text" class="form-control" id="UserName" placeholder="User Name/ Email Id" name="UserName">
+                    <div class="invalid-feedback" id="MandatoryUsername" style="display:none;">
+                        Please Enter UserName
+                    </div>
+                    <br />
+                    <input type="password" class="form-control" id="Password" placeholder="Password" name="Password">
+                    <div class="invalid-feedback" id="MandatoryPassword" style="display:none;">
+                        Please Enter Password
+                    </div>
+                    <hr />
+                    <button type="button" class="btn btn-primary" onclick="SignIn()">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/LoginPageScripts.js"></script>

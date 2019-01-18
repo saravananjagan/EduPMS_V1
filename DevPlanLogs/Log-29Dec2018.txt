@@ -7,3 +7,23 @@ Objectives/ Required:
 Objectives/ Optional: 
 1. Set authorization based accessibility for the question paper page
 2. Test the same
+
+Analysis Reports for LOGIN functionality:
+I. TABLES AVAILABLE IN EXISTING
+	1. tenant details table to store tenant information
+	2. user details table to store user information, but this information table has no relation with the tenant details and membership details
+	3. membership table to store the credentials related and membership related information.
+	
+II. INFERENCE(Entry: 13:32):
+	1. Tables to be created :
+		a. TenantDetails -> Master
+		b. UserDetails -> Depends on TenantDetails table
+
+III. STEPS GOING TO BE FOLLOWED(Entry: 13:32):
+	1. Create the tables.(Completed: 16:41)	
+	2. Use a SP for conditionaly(if not exists) adding the seed data for Product Admin.
+		a. before creating the product admin create a service layer application which has the encryption and decryption of password.(Entry: 16:41)
+	3. Create a tenant creation portal(this portal design will be taken after designing login page) only product admin role can access the portal.	
+
+Works to be done after login functionality accomplished:
+1. remember me functionality, forgot password functionality and create account functionality.:
