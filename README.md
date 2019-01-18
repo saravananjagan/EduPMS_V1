@@ -14,6 +14,7 @@ Internal DB Design
 . TenantDetails table -all screens-done
 . Entity Table for maintaining Entity details
 . Module Table for Module Details -Product Admin ,Tenant Admin, manage module details
+. TenantEntity Table for mapping tenant details with the entities and modules
 . Accessibility Table for View, Edit and Delete Accessibility permissions
 . Role Table for role details -Product Admin, Tenant Admin, manage role details
 . UserRole for mapping user with roles -Product Admin, Tenant Admin, manage role details, Create User
